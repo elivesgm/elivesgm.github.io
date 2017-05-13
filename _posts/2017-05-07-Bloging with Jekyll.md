@@ -1,11 +1,7 @@
 ---
-layout: default
-title: Introduction to Jekyll
----
----
 layout: post
 title: "Introduction to Jekyll"
-date: 2016-04-108 18:15:06 
+date: 2017-05-07 18:15:06 
 description: "Introduction to Jekyll"
 tag: Tools
 ---

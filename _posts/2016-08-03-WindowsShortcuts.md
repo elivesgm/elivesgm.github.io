@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Windows Shortcuts"
-date: 2016-06-08 18:15:06 
+date: 2016-08-03 18:15:06 
 description: "Tools"
 tag: Tools
 ---

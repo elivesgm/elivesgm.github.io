@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Linux development"
-date: 2016-04-108 18:15:06 
+date: 2017-05-02 18:15:06 
 description: "Linux development"
 tag: Linux
 ---
