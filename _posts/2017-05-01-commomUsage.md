@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "git common usages"
+title: "commomUsage"
 date: 2017-05-01 18:15:06 
 description: "git"
 tag: git

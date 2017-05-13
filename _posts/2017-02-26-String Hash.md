@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Linux Commands"
+title: "String Hash"
 date: 2017-02-26 18:15:06 
 description: "String Hash"
 tag: Algorithm

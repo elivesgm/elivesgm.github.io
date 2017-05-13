@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Linux development"
+title: "Developent"
 date: 2017-05-02 18:15:06 
 description: "Linux development"
 tag: Linux
