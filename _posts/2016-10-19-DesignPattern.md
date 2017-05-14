@@ -7,7 +7,7 @@ tag: Design Pattern
 ---
 
 ### 0 设计模式基础
-- UML
+- UML, refers to http://www.cnblogs.com/riky/archive/2007/04/07/704298.html
 - Tool: EA
 
 ### 1 分类
