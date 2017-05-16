@@ -66,8 +66,10 @@ tag: Linux
 - du -sh, 查看目录或文件的所占用的磁盘空间大小。
 
 
+### 4 识别文件类型file
 
-### 4 其他
+
+### 5 其他
 
 - Kernel code: http://home.ustc.edu.cn/~boj/courses/linux_kernel/1_boot.html
 - Core Dump: http://www.cnblogs.com/hazir/p/linxu_core_dump.html
