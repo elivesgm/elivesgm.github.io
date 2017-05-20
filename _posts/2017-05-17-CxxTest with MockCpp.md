@@ -141,3 +141,6 @@ Eg.,
                 .after("bar")
                 .will(returnValue(true));
 
+#### 2.6 setup/teardown
+
+在teardown()中调用GlobalMockObject::verify(),否则会调用根据约束满足的第一个mock。
