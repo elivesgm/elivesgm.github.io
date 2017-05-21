@@ -110,6 +110,7 @@ BOIS：
 >* 依据配置加载执行内核并跳转到内核执行
 
 注1：
+
 <td bgcolor=#7FFFD4>
 <font size=2>
 bootloader会使能**保护模式**(将CR0的bit0置为1)和段机制，并从硬盘上读取kernel in ELF格式的OS kernel(跟在MBR后面的扇区）并放到内存中固定位置，跳转到OS的入口点执行，这是控制权交到了OS中。 
@@ -117,6 +118,7 @@ bootloader会使能**保护模式**(将CR0的bit0置为1)和段机制，并从�
 </td>
 
 注2：
+
 <td bgcolor=#7FFFD4>
 <font size=2>
 
