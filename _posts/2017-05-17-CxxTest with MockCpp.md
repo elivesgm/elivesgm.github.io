@@ -31,7 +31,7 @@ tag: Test
        .after(anotherMock,"open")
        .will(returnValue(true))
        .then(throws(std::exception))
-       .id("myMethod");
+	   .id("myMethod");
 
 #### 2.2 函数调用行为
 函数调用行为是mock机制中最重要的部分。也是mock存在最基本的价值所在。通过指定函数调用行为，mock更好得实现了stub的功能。
