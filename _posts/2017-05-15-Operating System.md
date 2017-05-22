@@ -111,15 +111,13 @@ BOIS：
 
 注1：
 
-<table><tr><td bgcolor=#7FFFD4>
-<font size=2>
+<font color=blue size=2>
 bootloader会使能**保护模式**(将CR0的bit0置为1)和段机制，并从硬盘上读取kernel in ELF格式的OS kernel(跟在MBR后面的扇区）并放到内存中固定位置，跳转到OS的入口点执行，这是控制权交到了OS中。 
 </font>
-</td></tr></table>
 
 注2：
 
-ELF(Executable and Linking Format)是一种对象文件的格式，具体参见“[Executable and Linking Format (ELF) Files](/2017/05/Executable and Linking Format File)”。
+ELF(Executable and Linking Format)是一种对象文件的格式，具体参见“[Executable and Linking Format (ELF) Files](/2016/05/Executable-and-Linking-Format-File/)”。
 
 #### 2.2 中断、异常和系统调用
 
