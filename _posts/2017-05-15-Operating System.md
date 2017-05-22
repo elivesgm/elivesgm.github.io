@@ -109,15 +109,9 @@ BOIS：
 >* 可选的操作系统内核列表和加载参数
 >* 依据配置加载执行内核并跳转到内核执行
 
-注1：
+注1：bootloader会使能**保护模式**(将CR0的bit0置为1)和段机制，并从硬盘上读取kernel in ELF格式的OS kernel(跟在MBR后面的扇区）并放到内存中固定位置，跳转到OS的入口点执行，这是控制权交到了OS中。 
 
-<font color=blue>
-bootloader会使能**保护模式**(将CR0的bit0置为1)和段机制，并从硬盘上读取kernel in ELF格式的OS kernel(跟在MBR后面的扇区）并放到内存中固定位置，跳转到OS的入口点执行，这是控制权交到了OS中。 
-</font>
-
-注2：
-
-ELF(Executable and Linking Format)是一种对象文件的格式，具体参见“[Executable and Linking Format (ELF) Files](/2016/05/Executable-and-Linking-Format-File/)”。
+注2：ELF(Executable and Linking Format)是一种对象文件的格式，具体参见“[Executable and Linking Format (ELF) Files](/2016/05/Executable-and-Linking-Format-File/)”。
 
 #### 2.2 中断、异常和系统调用
 
@@ -129,11 +123,11 @@ ELF(Executable and Linking Format)是一种对象文件的格式，具体参见�
 
 操作系统和外界的交互靠**中断**、**异常**和**系统调用**。
 
-**中断**：来自硬件设备的处理请求，eg., 键盘输入；
+**中断**：包括硬中断(来自硬件设备的处理请求，eg., 串口、网卡、时钟...)和软中断(通常用于系统调用, eg., INT n)；
 
 **异常**：非法指令或者其他原因导致当前**指令执行失败后**的处理请求，eg., 内存出错、访问地址非法；
 
-**系统调用**：应用程序**主动**向操作系统发出的服务请求，eg., 读写磁盘, printf()会触发系统调用write()。
+**系统调用**：应用程序**主动**向操作系统发出的服务请求，用户程序通过系统调用访问OS内核服务（使用Trap, 也称软中断），eg., 读写磁盘, printf()会触发系统调用write()。
 
 三种常用的应用程序编程接口(对上应用程序提供接口，对下调用系统调用)：Win32 API(windows), POSIX API(Unix/Linux), Java API(JVM)
 
@@ -146,6 +140,20 @@ ELF(Executable and Linking Format)是一种对象文件的格式，具体参见�
 **函数调用**
 
 - 使用CALL和RET常规调用，没有堆栈切换。
+
+其中，函数调用过程包括以下步骤：
+
+- 参数入栈： 将参数从右向左依次压入系统栈
+- 函数返回地址入栈：将当前代码区调用指令的下一条指令入栈，供返回继续执行
+- 代码区跳转：从当前代码区跳转到被调用函数的入口处
+- 栈帧调整
+
+大致指令为：
+
+- push参数3 参数2 参数1
+- call函数地址(call指令完成两项工作：首先保存返回地址压入当前指令地址的下一指令地址，在跳转到所调用的函数入口处)
+
+通常函数返回值保存在寄存器EAX中。
 
 
 
