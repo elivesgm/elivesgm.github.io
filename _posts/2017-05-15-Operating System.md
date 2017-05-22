@@ -111,7 +111,7 @@ BOIS：
 
 注1：
 
-<font color=blue size=2>
+<font color=blue>
 bootloader会使能**保护模式**(将CR0的bit0置为1)和段机制，并从硬盘上读取kernel in ELF格式的OS kernel(跟在MBR后面的扇区）并放到内存中固定位置，跳转到OS的入口点执行，这是控制权交到了OS中。 
 </font>
 
