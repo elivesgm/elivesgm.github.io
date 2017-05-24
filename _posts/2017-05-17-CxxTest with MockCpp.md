@@ -29,15 +29,15 @@ tag: Test
 
 - Generate the tests file:
 
->* \# cxxtestgen --error-printer -o tests.cpp MyTestSuite.h
+> \# cxxtestgen --error-printer -o tests.cpp MyTestSuite.h
 
 - Compile and run:
 
->* \# g++ -o main tests.cpp
->* \# ./main
+> \# g++ -o main tests.cpp
+> \# ./main
 
 - Result:
->* Running cxxtest tests (1 test).OK!
+> Running cxxtest tests (1 test).OK!
 
 ### 2. MockCpp
 #### 2.1 mock++当前支持七种类型的约束/行为：
