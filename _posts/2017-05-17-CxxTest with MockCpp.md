@@ -87,8 +87,8 @@ d. Result:
     TS_ASSERT_EQUALS(20, mock->foo());
     TS_ASSERT_THROWS(mock->foo(), std::exception);
     TS_ASSERT_EQUALS(5, mock->foo());
-    TS_ASSERT_EQUALS(5, mock->foo());//特别是需要注意在一个testcase中mock的函数调用行为在后面的testcase中如果约束满足也会继续发生作用
-    TS_ASSERT_EQUALS(5, mock->foo());//特别是需要注意在一个testcase中mock的函数调用行为在后面的testcase中如果约束满足也会继续发生作用
+    TS_ASSERT_EQUALS(5, mock->foo());//特别是需要注意在一个testcase中mock的函数调用行为在后面的testcase中如果约束满足也会继续发生作用
+    TS_ASSERT_EQUALS(5, mock->foo());//特别是需要注意在一个testcase中mock的函数调用行为在后面的testcase中如果约束满足也会继续发生作用
 
 #### 2.3 调用参数约束
 调用参数事实上是一种选择器，而不是一种约束。因为你可以在一个用例中，针对一个函数，指定多个mock调用方式。当被测函数调用这个mock函数时，mock++会找到第一个匹配所有选择器的调用方式，然后返回这个调用方式指定的结果（返回值，抛出异常，等等）。如果mock++找不到任何匹配的调用方式，则会让这个用例失败。约束的类型：
@@ -100,16 +100,16 @@ d. Result:
 - 大于 : gt (value)
 - 小于 : lt (vlaue)
 - 内存匹配:
-    mirror (object);
-    mirror (address, size)
+    - mirror (object);
+    - mirror (address, size)
 - 对象内容监控: spy(address, size)
 - 引用传值: outBound(object)
 - 指针传值: outBoundP(address)
 - 字符串匹配：
-    smirror (str)
-    startWith (str)
-    endWith (str)
-    contains (str)
+    - smirror (str)
+    - startWith (str)
+    - endWith (str)
+    - contains (str)
 - 占位符：any ()
 
 **输出参数约束**：
@@ -129,11 +129,11 @@ startWith()，endWith(), contains()用来约束字符串的存在性，startWith
 - 一次：once ()
 - 准确的次数：exactly (n)
 - 至少：
-    -atLeast (n)
-    -atLeastOnce()
+    - atLeast (n)
+    - atLeastOnce()
 - 至多：
-   -atMost (n)
-   -atMostOnce()
+   - atMost (n)
+   - atMostOnce()
 - 不调用：never ()
 
 #### 2.5 调用顺序
@@ -141,13 +141,13 @@ startWith()，endWith(), contains()用来约束字符串的存在性，startWith
 **约束的类型**
 
 - 之前：
-   -before (id)
-   -before (object, id)
+ - before (id)
+ - before (object, id)
 - 之后：
-   -after (id)
-   -after (object, id)
+ - after (id)
+ - after (object, id)
 
-Eg.,
+For example,
 
     MockObject<Interface> mock;
 
@@ -176,8 +176,8 @@ Eg.,
 
 * mockcpp是强类型检查的，强类型检查也是C/C＋＋的一个优势，比如eq(3)，如果调用函数时用的参数是UL，那么就应该用eq((UL)3)
 * mock方法
-- C函数或者类的静态成员方法用MOCKER;
-- mock 类的非静态成员方法需要先用MockObject\<MyClass\>mocker声明一个mock对象，再用MOCK_METHOD(mocker, method)来mock指定方法。
+ - C函数或者类的静态成员方法用MOCKER;
+ - mock 类的非静态成员方法需要先用MockObject\<MyClass\>mocker声明一个mock对象，再用MOCK_METHOD(mocker, method)来mock指定方法。
 * MOCKER/MOCK_METHOD之后是stubs、defaults、expects，三个必须有一个。
-* 使用mockcpp时，校验是否按照mock规范进行调用的，应该用： GlobalMockObject::verify(); verify之后，会自动执行reset（如果是对象的mock，应该用mocker.verify()，同样也会自动reset。）。如果单单只想reset，也可以直接使用GlobalMockObject::reset(), 但是不推荐这样;一般是在teardown中调用verify。
+* 使用mockcpp时，校验是否按照mock规范进行调用的，应该用： GlobalMockObject::verify(); verify之后，会自动执行reset（如果是对象的mock，应该用mocker.verify()，同样也会自动reset）。如果单单只想reset，也可以直接使用GlobalMockObject::reset(), 但是不推荐这样;一般是在teardown中调用verify。
 
