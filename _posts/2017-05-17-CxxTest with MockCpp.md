@@ -14,28 +14,27 @@ tag: Test
 
 - Create a test suite header file:
 
-    //file name : MyTestSuite.h
-    #include <cxxtest/TestSuite.h>
+        //file name : MyTestSuite.h
+        #include <cxxtest/TestSuite.h>
+        class MyTestSuite : public CxxTest::TestSuite 
+        {
+         public:
 
-    class MyTestSuite : public CxxTest::TestSuite 
-    {
-     public:
-
-         void testAddition( void )
-         {
-         TS_ASSERT( 1 + 1 > 1 );
-         TS_ASSERT_EQUALS( 1 + 1, 2 );
-         }
-     };
+             void testAddition( void )
+             {
+             TS_ASSERT( 1 + 1 > 1 );
+             TS_ASSERT_EQUALS( 1 + 1, 2 );
+             }
+         };
 
 - Generate the tests file:
 
->* # cxxtestgen --error-printer -o tests.cpp MyTestSuite.h
+>* \# cxxtestgen --error-printer -o tests.cpp MyTestSuite.h
 
 - Compile and run:
 
->* # g++ -o main tests.cpp
->* # ./main
+>* \# g++ -o main tests.cpp
+>* \# ./main
 
 - Result:
 >* Running cxxtest tests (1 test).OK!
