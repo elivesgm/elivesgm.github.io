@@ -9,7 +9,36 @@ tag: Test
 
 ### 1. CxxTest
 
+#### A Simple Example
+----------------
 
+- Create a test suite header file:
+
+    //file name : MyTestSuite.h
+    #include <cxxtest/TestSuite.h>
+
+    class MyTestSuite : public CxxTest::TestSuite 
+    {
+     public:
+
+         void testAddition( void )
+         {
+         TS_ASSERT( 1 + 1 > 1 );
+         TS_ASSERT_EQUALS( 1 + 1, 2 );
+         }
+     };
+
+- Generate the tests file:
+
+>* # cxxtestgen --error-printer -o tests.cpp MyTestSuite.h
+
+- Compile and run:
+
+>* # g++ -o main tests.cpp
+>* # ./main
+
+- Result:
+>* Running cxxtest tests (1 test).OK!
 
 ### 2. MockCpp
 #### 2.1 mock++当前支持七种类型的约束/行为：
