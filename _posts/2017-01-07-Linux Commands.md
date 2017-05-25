@@ -79,7 +79,48 @@ tag: Linux
 - more, 和cat的功能一样都是查看文件里的内容，但有所不同的是more可以按页来查看文件的内容，还支持直接跳转行等功能。
 - less, 也是对文件或其它输出进行分页显示的工具，应该说是linux正统查看文件内容的工具，功能极其强大。less的用法比起 more 更加的有弹性。 在more的时候，我们并没有办法向前面翻，只能往后面看，但若使用了less时，就可以使用 [pageup] [pagedown] 等按 键的功能来往前往后翻看文件，更容易用来查看一个文件的内容！除此之外，在 less 里头可以拥有更多的搜索功能，不止可以向下搜，也可以向上搜。
 
-### 6 其他
+### 6 user/group
+
+a. 查看系统中user/group信息
+
+    root@ubuntu:~# cat /etc/passwd
+	ubuntu:x:1000:1000:ubuntu,,,:/home/ubuntu:/bin/bash
+
+b. w命令用于显示已经登录系统的用户的名称，以及他们正在做的事。该命令所使用的信息来源于/var/run/utmp文件。
+
+	root@ubuntu:~# w
+	 00:14:33 up  2:36,  3 users,  load average: 0.00, 0.00, 0.01
+	USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
+	ubuntu   tty7     :0               21:43    2:36m  3:04   0.27s /sbin/upstart --user
+	root     tty8     :3               23:07    2:36m  3.15s  0.16s /sbin/upstart --user
+	root     pts/19   192.168.1.101    00:13    0.00s  0.03s  0.00s w
+
+c. who命令查看（登录）用户名称及所启动的进程。
+
+	root@ubuntu:~# who
+	ubuntu   tty7         2017-05-25 21:43 (:0)
+	root     tty8         2017-05-25 23:07 (:3)
+	root     pts/19       2017-05-26 00:13 (192.168.1.101)
+
+d. users命令，可用于打印输出登录服务器的用户名称。
+
+	root@ubuntu:~# users
+	root root ubuntu
+
+e. whoami命令查看当前所使用的登录名称
+
+	root@ubuntu:~# whoami
+	root
+
+f. last命令可用于显示特定用户登录系统的历史记录。
+
+	root@ubuntu:~# last root
+	root     pts/19       192.168.1.101    Fri May 26 00:13   still logged in
+	root     tty8         :3               Thu May 25 23:07    gone - no logout
+	root     pts/18       192.168.1.101    Thu May 25 22:44 - 23:45  (01:01)
+
+
+### 7 其他
 
 - Kernel code: http://home.ustc.edu.cn/~boj/courses/linux_kernel/1_boot.html
 - Core Dump: http://www.cnblogs.com/hazir/p/linxu_core_dump.html
