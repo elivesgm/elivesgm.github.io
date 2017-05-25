@@ -141,11 +141,11 @@ startWith()，endWith(), contains()用来约束字符串的存在性，startWith
 **约束的类型**
 
 - 之前：
- - before (id)
- - before (object, id)
+   - before (id)
+   - before (object, id)
 - 之后：
- - after (id)
- - after (object, id)
+   - after (id)
+   - after (object, id)
 
 For example,
 
