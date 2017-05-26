@@ -68,9 +68,8 @@ tag: Linux
 
 ### 4 识别文件类型file
 
-> file test.o
-    
-    test.o: ELF 32-bit LSB relocatable, Intel 80386, version 1 (SYSV), not stripped
+	root@ubuntu:~# file test.o
+	test.o: ELF 32-bit LSB relocatable, Intel 80386, version 1 (SYSV), not stripped
 
 
 ### 5 cat/more/less
@@ -83,7 +82,7 @@ tag: Linux
 
 a. 查看系统中user/group信息
 
-    root@ubuntu:~# cat /etc/passwd
+        root@ubuntu:~# cat /etc/passwd
 	ubuntu:x:1000:1000:ubuntu,,,:/home/ubuntu:/bin/bash
 
 b. w命令用于显示已经登录系统的用户的名称，以及他们正在做的事。该命令所使用的信息来源于/var/run/utmp文件。
