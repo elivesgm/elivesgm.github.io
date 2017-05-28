@@ -119,6 +119,10 @@ f. last命令可用于显示特定用户登录系统的历史记录。
 	root     pts/18       192.168.1.101    Thu May 25 22:44 - 23:45  (01:01)
 
 
+### 7 CLI命令
+
+ctrl+x: 行首行尾跳转
+
 ### 7 其他
 
 - Kernel code: http://home.ustc.edu.cn/~boj/courses/linux_kernel/1_boot.html
