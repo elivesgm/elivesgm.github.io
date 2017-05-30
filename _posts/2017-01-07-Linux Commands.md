@@ -121,7 +121,55 @@ f. last命令可用于显示特定用户登录系统的历史记录。
 
 ### 7 CLI命令
 
-ctrl+x: 行首行尾跳转
+a. ctrl+x: 行首行尾跳转
+
+b. tree(需要额外安装):
+
+	root@ubuntu:/home/ubuntu/code# tree
+	.
+	├── dev_test
+	│   └── core
+	└── git_repo
+	
+	2 directories, 1 file
+
+c. tee, 输出到屏幕同时重定向到文件
+
+	root@ubuntu:/home/ubuntu/Codeing/perl# cat test.perl | tee logfile
+	#!/usr/bin/perl
+
+	@array = ("ACTC", "AATT", "GTCA");
+
+	foreach $para (@array){
+	    @data = split("", $para);
+	    print "@data[1]\n";
+	}
+
+d. od, object dump, 以指定格式显示文件。
+
+	root@ubuntu:/home/ubuntu/Codeing/perl# od test.perl 
+	0000000 020443 072457 071163 061057 067151 070057 071145 005154
+	0000020 040012 071141 060562 020171 020075 021050 041501 041524
+	0000040 026042 021040 040501 052124 026042 021040 052107 040503
+	0000060 024442 005073 063012 071157 060545 064143 022040 060560
+	0000100 060562 024040 060500 071162 074541 075451 020012 020040
+	0000120 040040 060544 060564 036440 071440 066160 072151 021050
+	0000140 026042 022040 060560 060562 035451 020012 020040 070040
+	0000160 064562 072156 021040 062100 072141 055541 056461 067134
+	0000200 035442 076412 000012
+	0000205
+	root@ubuntu:/home/ubuntu/Codeing/perl# od -c test.perl 
+	0000000   #   !   /   u   s   r   /   b   i   n   /   p   e   r   l  \n
+	0000020  \n   @   a   r   r   a   y       =       (   "   A   C   T   C
+	0000040   "   ,       "   A   A   T   T   "   ,       "   G   T   C   A
+	0000060   "   )   ;  \n  \n   f   o   r   e   a   c   h       $   p   a
+	0000100   r   a       (   @   a   r   r   a   y   )   {  \n            
+	0000120       @   d   a   t   a       =       s   p   l   i   t   (   "
+	0000140   "   ,       $   p   a   r   a   )   ;  \n                   p
+	0000160   r   i   n   t       "   @   d   a   t   a   [   1   ]   \   n
+	0000200   "   ;  \n   }  \n
+	0000205
+
 
 ### 7 其他
 
