@@ -73,11 +73,42 @@ a. file, 识别文件类型。
 	root@ubuntu:~# file test.o
 	test.o: ELF 32-bit LSB relocatable, Intel 80386, version 1 (SYSV), not stripped
 
-b. cat/more/less
+b. cat/more/less/nl
 
 - cat, 查看文件所有内容
 - more, 和cat的功能一样都是查看文件里的内容，但有所不同的是more可以按页来查看文件的内容，还支持直接跳转行等功能。
 - less, 也是对文件或其它输出进行分页显示的工具，应该说是linux正统查看文件内容的工具，功能极其强大。less的用法比起 more 更加的有弹性。 在more的时候，我们并没有办法向前面翻，只能往后面看，但若使用了less时，就可以使用 [pageup] [pagedown] 等按 键的功能来往前往后翻看文件，更容易用来查看一个文件的内容！除此之外，在 less 里头可以拥有更多的搜索功能，不止可以向下搜，也可以向上搜。
+- nl, 查看文件的同时显示行号，同cat -n
+
+	root@ubuntu:/home/ubuntu/Codeing/perl# nl MyTestSuit1.h 
+	     1	// MyTestSuite1.h
+
+	     2	#include <cxxtest/TestSuite.h>
+
+	     3	class MyTestSuite1: public CxxTest::TestSuite
+	     4	{
+	     5	public:
+	     6	    void testAddition()
+	     7	    {
+	     8	        TS_ASSERT(1 + 1 > 1);
+	     9		TS_ASSERT_EQUALS(1 + 1, 2);
+	    10	    }
+	    11	};
+	root@ubuntu:/home/ubuntu/Codeing/perl# cat -n  MyTestSuit1.h 
+	     1	// MyTestSuite1.h
+	     2	
+	     3	#include <cxxtest/TestSuite.h>
+	     4	
+	     5	class MyTestSuite1: public CxxTest::TestSuite
+	     6	{
+	     7	public:
+	     8	    void testAddition()
+	     9	    {
+	    10	        TS_ASSERT(1 + 1 > 1);
+	    11		TS_ASSERT_EQUALS(1 + 1, 2);
+	    12	    }
+	    13	};
+
 
 c. tee, 输出到屏幕同时重定向到文件。
 
