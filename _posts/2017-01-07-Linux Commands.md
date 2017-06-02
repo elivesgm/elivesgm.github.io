@@ -66,19 +66,70 @@ tag: Linux
 - du -sh, 查看目录或文件的所占用的磁盘空间大小。
 
 
-### 4 识别文件类型file
+### 4 文件操作
+
+a. file, 识别文件类型。
 
 	root@ubuntu:~# file test.o
 	test.o: ELF 32-bit LSB relocatable, Intel 80386, version 1 (SYSV), not stripped
 
-
-### 5 cat/more/less
+b. cat/more/less
 
 - cat, 查看文件所有内容
 - more, 和cat的功能一样都是查看文件里的内容，但有所不同的是more可以按页来查看文件的内容，还支持直接跳转行等功能。
 - less, 也是对文件或其它输出进行分页显示的工具，应该说是linux正统查看文件内容的工具，功能极其强大。less的用法比起 more 更加的有弹性。 在more的时候，我们并没有办法向前面翻，只能往后面看，但若使用了less时，就可以使用 [pageup] [pagedown] 等按 键的功能来往前往后翻看文件，更容易用来查看一个文件的内容！除此之外，在 less 里头可以拥有更多的搜索功能，不止可以向下搜，也可以向上搜。
 
-### 6 user/group
+c. tee, 输出到屏幕同时重定向到文件。
+
+	root@ubuntu:/home/ubuntu/Codeing/perl# cat test.perl | tee logfile
+	#!/usr/bin/perl
+
+	@array = ("ACTC", "AATT", "GTCA");
+
+	foreach $para (@array){
+	    @data = split("", $para);
+	    print "@data[1]\n";
+	}
+
+d. od, object dump, 以指定格式显示文件。
+
+	root@ubuntu:/home/ubuntu/Codeing/perl# od test.perl 
+	0000000 020443 072457 071163 061057 067151 070057 071145 005154
+	0000020 040012 071141 060562 020171 020075 021050 041501 041524
+	0000040 026042 021040 040501 052124 026042 021040 052107 040503
+	0000060 024442 005073 063012 071157 060545 064143 022040 060560
+	0000100 060562 024040 060500 071162 074541 075451 020012 020040
+	0000120 040040 060544 060564 036440 071440 066160 072151 021050
+	0000140 026042 022040 060560 060562 035451 020012 020040 070040
+	0000160 064562 072156 021040 062100 072141 055541 056461 067134
+	0000200 035442 076412 000012
+	0000205
+	root@ubuntu:/home/ubuntu/Codeing/perl# od -c test.perl 
+	0000000   #   !   /   u   s   r   /   b   i   n   /   p   e   r   l  \n
+	0000020  \n   @   a   r   r   a   y       =       (   "   A   C   T   C
+	0000040   "   ,       "   A   A   T   T   "   ,       "   G   T   C   A
+	0000060   "   )   ;  \n  \n   f   o   r   e   a   c   h       $   p   a
+	0000100   r   a       (   @   a   r   r   a   y   )   {  \n            
+	0000120       @   d   a   t   a       =       s   p   l   i   t   (   "
+	0000140   "   ,       $   p   a   r   a   )   ;  \n                   p
+	0000160   r   i   n   t       "   @   d   a   t   a   [   1   ]   \   n
+	0000200   "   ;  \n   }  \n
+	0000205
+
+e. head/tail
+
+	root@ubuntu:/home/ubuntu/Codeing/perl# head -n 3 MyTestSuit1.h
+	// MyTestSuite1.h
+
+	#include <cxxtest/TestSuite.h>
+	root@ubuntu:/home/ubuntu/Codeing/perl# tail -n 3 MyTestSuit1.h
+		TS_ASSERT_EQUALS(1 + 1, 2);
+	    }
+	};
+
+
+
+### 5 user/group
 
 a. 查看系统中user/group信息
 
@@ -119,7 +170,7 @@ f. last命令可用于显示特定用户登录系统的历史记录。
 	root     pts/18       192.168.1.101    Thu May 25 22:44 - 23:45  (01:01)
 
 
-### 7 CLI命令
+### 6 CLI命令
 
 a. ctrl+x: 行首行尾跳转
 
@@ -132,43 +183,6 @@ b. tree(需要额外安装):
 	└── git_repo
 	
 	2 directories, 1 file
-
-c. tee, 输出到屏幕同时重定向到文件
-
-	root@ubuntu:/home/ubuntu/Codeing/perl# cat test.perl | tee logfile
-	#!/usr/bin/perl
-
-	@array = ("ACTC", "AATT", "GTCA");
-
-	foreach $para (@array){
-	    @data = split("", $para);
-	    print "@data[1]\n";
-	}
-
-d. od, object dump, 以指定格式显示文件。
-
-	root@ubuntu:/home/ubuntu/Codeing/perl# od test.perl 
-	0000000 020443 072457 071163 061057 067151 070057 071145 005154
-	0000020 040012 071141 060562 020171 020075 021050 041501 041524
-	0000040 026042 021040 040501 052124 026042 021040 052107 040503
-	0000060 024442 005073 063012 071157 060545 064143 022040 060560
-	0000100 060562 024040 060500 071162 074541 075451 020012 020040
-	0000120 040040 060544 060564 036440 071440 066160 072151 021050
-	0000140 026042 022040 060560 060562 035451 020012 020040 070040
-	0000160 064562 072156 021040 062100 072141 055541 056461 067134
-	0000200 035442 076412 000012
-	0000205
-	root@ubuntu:/home/ubuntu/Codeing/perl# od -c test.perl 
-	0000000   #   !   /   u   s   r   /   b   i   n   /   p   e   r   l  \n
-	0000020  \n   @   a   r   r   a   y       =       (   "   A   C   T   C
-	0000040   "   ,       "   A   A   T   T   "   ,       "   G   T   C   A
-	0000060   "   )   ;  \n  \n   f   o   r   e   a   c   h       $   p   a
-	0000100   r   a       (   @   a   r   r   a   y   )   {  \n            
-	0000120       @   d   a   t   a       =       s   p   l   i   t   (   "
-	0000140   "   ,       $   p   a   r   a   )   ;  \n                   p
-	0000160   r   i   n   t       "   @   d   a   t   a   [   1   ]   \   n
-	0000200   "   ;  \n   }  \n
-	0000205
 
 
 ### 7 其他
