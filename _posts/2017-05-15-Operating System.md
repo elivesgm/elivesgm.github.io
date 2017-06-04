@@ -157,3 +157,9 @@ BOIS：
 
 
 
+
+
+### References
+
+[1] 操作系统(Operating Systems) (2017), http://os.cs.tsinghua.edu.cn/oscourse/OS2017spring.
+
