@@ -11,14 +11,18 @@ tag: Compilers
 ### 2. 函数调用过程
 
 #### 2.1 汇编函数调用过程
-x86寄存器的结构如下：
 
-![](/images/posts/2017-06-11-Compilers/x86-registers.png)
+<center>
+<img src="/images/posts/2017-06-11-Compilers/x86-registers.png" width="60%" height="60%" />
+Figure 1. x86寄存器的结构
+</center>
 
 调用规则分为两个方面，及调用者规则和被调用者规则，如一个函数A调用一个函数B，则A被称为调用者(Caller)，B被称为被调用者(Callee)。
 
-![](/images/posts/2017-06-11-Compilers/stack-convention.png "一个调用过程中的内存中的栈布局")
-
+<center>
+<img src="/images/posts/2017-06-11-Compilers/stack-convention.png" width="60%" height="60%" />
+Figure 2. 一个调用过程中的内存中的栈布局
+</center>
 
 ##### Caller Rules
 
