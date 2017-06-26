@@ -158,6 +158,11 @@ e. head/tail
 	    }
 	};
 
+f. grep
+在logfile.txt中搜索memory并将其前10行到后5行重定向到tmp.txt:
+
+	grep "memory" -n -A10 -B5 logfile.txt > tmp.txt
+
 
 
 ### 5. user/group
