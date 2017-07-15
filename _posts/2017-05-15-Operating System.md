@@ -169,4 +169,4 @@ refers to [2].
 
 [1] 操作系统(Operating Systems) (2017), http://os.cs.tsinghua.edu.cn/oscourse/OS2017spring.
 
-[2] (mmap分析)[http://www.cnblogs.com/huxiao-tee/p/4660352.html], cnblogs.com.
+[2] [mmap分析](http://www.cnblogs.com/huxiao-tee/p/4660352.html), cnblogs.com.
