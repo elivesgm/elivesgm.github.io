@@ -120,8 +120,11 @@ Example:
 
 
 #### 2.2 C函数调用过程
-
 refer to [4,5].
+
+
+### 3 静态库(.a) v.s. 共享/动态库(.so)
+refer to [6].
 
 
 ### References:
@@ -135,3 +138,5 @@ refer to [4,5].
 [4] [ｃ语言函数调用过程](http://blog.csdn.net/crazyuo/article/details/40518101), csdn.com.
 
 [5] [深入理解C语言的函数调用过程](http://blog.csdn.net/lee244868149/article/details/49497679), csdn.com.
+
+[6][.a vs .so](http://www.cnblogs.com/xkfz007/archive/2012/05/01/2478229.html), cnblogs.com.
