@@ -89,9 +89,12 @@ Protobuf只需要简单地将一个二进制序列，按照指定的格式读取
 ### 4. Thrift
 
 
+
+
 ### References
 
 [1] [protocol-buffers](https://developers.google.com/protocol-buffers/), google developers.
 
 [2] [Google Protocol Buffer的使用和原理](https://www.ibm.com/developerworks/cn/linux/l-cn-gpb/), IBM developeWorks.
 
+[3] [google protobuf安装与使用](http://www.cnblogs.com/luoxn28/p/5303517.html), cnblogs.com.
