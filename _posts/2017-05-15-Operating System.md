@@ -157,11 +157,47 @@ BOIS：
 
 
 
-### 内存管理
+### 3. 内存管理
 #### mmap
 mmap是一种内存映射文件的方法，即将一个文件或者其它对象映射到进程的地址空间，实现文件磁盘地址和进程虚拟地址空间中一段虚拟地址的一一对映关系。实现这样的映射关系后，进程就可以采用指针的方式读写操作这一段内存，而系统会自动回写脏页面到对应的文件磁盘上，即完成了对文件的操作而不必再调用read,write等系统调用函数。相反，内核空间对这段区域的修改也直接反映用户空间，从而可以实现不同进程间的文件共享。
 
 refers to [2].
+
+
+### 4. 进程与线程
+
+### 4.1 进程与线程简介
+
+### 5. 进程间通信
+- 管道，Pipe(Unix IPC)
+- 有名管道，Named Pip, or FIFO(Unix IPC)
+- 信号，Signal(Unix, Posix, BSD IPC)
+- 消息队列，Message queue(System V IPC, Posix IPC)
+- 信号量，Semaphores(System V IPC, Posix IPC)
+- 共享内存，Shared memory(System V IPC, Posix IPC)
+- 套接字，Socket(BSD IPC)
+
+#### 5.1 Posix IPC
+- 消息队列
+- 信号量
+- 共享内存
+
+
+#### 5.2 管道和FIFO
+
+#### 5.2.1 管道
+create pipe
+
+	#include <unistd.h>
+	int pipe(int pipefd[2]);
+
+a **unidirectional** data channel that can be used for interprocess communication.  The array pipefd is used to return two file descriptors referring to the ends of the pipe.  pipefd[0] refers to the read end of the pipe.  pipefd[1] refers to the write end of the pipe.  Data written to the write end of the pipe is buffered by the kernel until it is read from the read end of the pipe.
+
+
+
+#### 5.2.2 FIFO
+
+
 
 
 
