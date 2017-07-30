@@ -125,7 +125,52 @@ Notes:
 ### 3. 异步编程
 
 
+### 4. IO复用
+与多进程和多线程技术相比，I/O多路复用技术的最大优势是系统开销小，系统不必创建进程/线程，也不必维护这些进程/线程，从而大大减小了系统的开销。
 
+#### 4.1 同步IO
+a. select
+
+	#include <sys/select.h>
+	#include <sys/time.h>
+	
+	int select(int maxfdp1,fd_set *readset,fd_set *writeset,fd_set *exceptset,const struct timeval *timeout)
+	返回值：就绪描述符的数目，超时返回0，出错返回-1
+
+select的几大缺点：
+
+（1）每次调用select，都需要把fd集合从用户态拷贝到内核态，这个开销在fd很多时会很大
+（2）同时每次调用select都需要在内核遍历传递进来的所有fd，这个开销在fd很多时也很大
+（3）select支持的文件描述符数量太小了，默认是1024
+
+b. poll
+
+	# include <poll.h>
+	int poll ( struct pollfd * fds, unsigned int nfds, int timeout);
+
+poll的机制与select类似，与select在本质上没有多大差别，管理多个描述符也是进行轮询，根据描述符的状态进行处理，但是poll没有最大文件描述符数量的限制。
+描述fd集合的方式不同，poll使用pollfd结构而不是select的fd_set结构，其他的都差不多。poll和select同样存在一个缺点就是，包含大量文件描述符的数组被整体复制于用户态和内核的地址空间之间，而不论这些文件描述符是否就绪，它的开销随着文件描述符数量的增加而线性增大。
+
+c. epoll
+
+	#include <sys/epoll.h>
+	int epoll_create(int size);
+	int epoll_ctl(int epfd, int op, int fd, struct epoll_event *event);
+	int epoll_wait(int epfd, struct epoll_event * events, int maxevents, int timeout);
+
+epoll是在2.6内核中提出的，是之前的select和poll的增强版本。相对于select和poll来说，epoll更加灵活，没有描述符限制。epoll使用一个文件描述符管理多个描述符，将用户关系的文件描述符的事件存放到内核的一个事件表中，这样在用户空间和内核空间的copy只需一次。
+
+d. 比较
+
+（1）select，poll实现需要自己不断轮询所有fd集合，直到设备就绪，期间可能要睡眠和唤醒多次交替。而epoll其实也需要调用epoll_wait不断轮询就绪链表，期间也可能多次睡眠和唤醒交替，但是它是设备就绪时，调用回调函数，把就绪fd放入就绪链表中，并唤醒在epoll_wait中进入睡眠的进程。虽然都要睡眠和交替，但是select和poll在“醒着”的时候要遍历整个fd集合，而epoll在“醒着”的时候只要判断一下就绪链表是否为空就行了，这节省了大量的CPU时间。这就是回调机制带来的性能提升。
+
+（2）select，poll每次调用都要把fd集合从用户态往内核态拷贝一次，并且要把current往设备等待队列中挂一次，而epoll只要一次拷贝，而且把current往等待队列上挂也只挂一次（在epoll_wait的开始，注意这里的等待队列并不是设备等待队列，只是一个epoll内部定义的等待队列）。这也能节省不少的开销。
+
+refers to [3].
+
+
+
+#### 4.2 异步IO
 
 
 
@@ -134,4 +179,6 @@ Notes:
 [1] [man](http://man7.org/linux/man-pages/index.html), man7.org.
 
 [2] [使用 C++11 编写 Linux 多线程程序](https://www.ibm.com/developerworks/cn/linux/1412_zhupx_thread/index.html), ibm.com.
+
+[3] [select、poll、epoll之间的区别总结](http://www.cnblogs.com/Anker/p/3265058.html),cnblogs.com.
 
