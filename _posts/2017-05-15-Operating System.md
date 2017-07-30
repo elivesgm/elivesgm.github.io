@@ -168,6 +168,13 @@ refers to [2].
 
 ### 4.1 进程与线程简介
 
+
+
+### 4.2 线程池
+refers to [3].
+
+
+
 ### 5. 进程间通信
 - 管道，Pipe(Unix IPC)
 - 有名管道，Named Pip, or FIFO(Unix IPC)
@@ -201,8 +208,11 @@ a **unidirectional** data channel that can be used for interprocess communicatio
 
 
 
+
 ### References
 
 [1] 操作系统(Operating Systems) (2017), http://os.cs.tsinghua.edu.cn/oscourse/OS2017spring.
 
 [2] [mmap分析](http://www.cnblogs.com/huxiao-tee/p/4660352.html), cnblogs.com.
+
+[3] [简单Linux C线程池](http://www.cnblogs.com/venow/archive/2012/11/22/2779667.html),cnblogs.com.
