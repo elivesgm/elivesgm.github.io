@@ -3,7 +3,7 @@ layout: post
 title: "Distributed Systems"
 date: 2017-07-30 23:33:06
 description: "Tech on Distributed Systems"
-tag: Operating System
+tag: Distributed Systems
 ---
 
 ### 1. 集群管理

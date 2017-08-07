@@ -238,6 +238,8 @@ a **unidirectional** data channel that can be used for interprocess communicatio
 #### 5.2.2 FIFO
 
 
+### 6. 线程间通信
+
 
 
 
