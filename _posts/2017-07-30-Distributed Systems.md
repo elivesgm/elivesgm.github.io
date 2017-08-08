@@ -148,8 +148,10 @@ RPC中两个重要的技术点：IO和序列化技术。
 
 ### References
 
-[1] [分布式系统开发之技术介绍](https://my.oschina.net/lifany/blog/423082),oschina.net.
+[1] [刘杰, 分布式系统原理介绍](blog.sciencenet.cn/home.php?mod=attachment&id=31413).
 
-[2] [分布式系统](http://feisky.xyz/distributed/),feisky.xyz.
+[2] [分布式系统开发之技术介绍](https://my.oschina.net/lifany/blog/423082),oschina.net.
 
-[3] 
+[3] [分布式系统](http://feisky.xyz/distributed/),feisky.xyz.
+
+[4] 

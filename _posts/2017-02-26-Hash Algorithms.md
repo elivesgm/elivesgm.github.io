@@ -11,6 +11,9 @@ tag: Algorithm
 - APHash
 - Murmur2
 - CityHash
+- MD5 (Message Digest)
+- SHA1(Secure Hash Algorithm)
+- SHA125
 
 实现：
 

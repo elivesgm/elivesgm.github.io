@@ -81,15 +81,84 @@ Protobuf只需要简单地将一个二进制序列，按照指定的格式读取
 
 
 ### 2. XML
+XML 指可扩展标记语言（EXtensible Markup Language）
+
+- 设计宗旨是传输数据，而非显示数据
+- 标签没有被预定义, 需要自行定义标签。
+- 被设计为具有自我描述性。
+- XML文档形成了一种树结构，它从“根部”开始，然后扩展到“枝叶”。
+- 在XML中，省略关闭标签是非法的。所有元素都必须有关闭标签
+
 
 
 ### 3. JSON
+JSON 指的是 JavaScript 对象表示法（JavaScript Object Notation）
+
+- 是轻量级的文本数据交换格式
+- 独立于语言
+- 具有自我描述性，更易理解
+
+JSON 对象在花括号中书写,对象可以包含多个名称/值对：
+	
+	{ "firstName":"John" , "lastName":"Doe" }
 
 
 ### 4. Thrift
 
 
+### 5. 对比
+#### 5.1 XML
+- 优点
+	- 格式统一，符合标准；
+	- 容易与其他系统进行远程交互，数据共享比较方便。
+- 缺点
+	- XML文件庞大，文件格式复杂，传输占带宽；
+	- 服务器端和客户端都需要花费大量代码来解析XML，导致服务器端和客户端代码变得异常复杂且不易维护；
+	- 客户端不同浏览器之间解析XML的方式不一致，解析得考虑子节点父节点，比较困难；
+	- 服务器端和客户端解析XML花费较多的资源和时间。
 
+#### 5.2 JSON
+- 优点：
+	- 数据格式比较简单，易于读写，格式都是压缩的，相对于XML来讲，数据的体积小，传递的速度更快些；
+	- 易于解析，客户端JavaScript可以简单的通过eval()进行JSON数据的读取；
+	- 因为JSON格式能直接为服务器端代码使用，大大简化了服务器端和客户端的代码开发量，且完成任务不变，并且易于维护。
+- 缺点
+	- 没有XML格式这么推广的深入人心和喜用广泛，描述性比XML较差，没有XML那么通用性；
+
+Example:
+
+XML:
+
+	<?xml version="1.0" encoding="utf-8" ?>
+	<country>
+	  <name>中国</name>
+	  <province>
+	    <name>黑龙江</name>
+	    <citys>
+	      <city>哈尔滨</city>
+	      <city>大庆</city>
+	    </citys>  　　
+	  </province>
+	  <province>
+	    <name>广东</name>
+	    <citys>
+	      <city>广州</city>
+	      <city>深圳</city>
+	      <city>珠海</city>
+	    </citys> 　　
+	  </province>
+	</country>
+
+JSON格式：
+
+	var country =
+	        {
+	            name: "中国",
+	            provinces: [
+	            { name: "黑龙江", citys: { city: ["哈尔滨", "大庆"]} },
+	            { name: "广东", citys: { city: ["广州", "深圳", "珠海"]} }
+	            ]
+	        }
 
 ### References
 
