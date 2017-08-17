@@ -57,3 +57,5 @@ zookeeper atomic broadcast protocol.
 [4] [Paxos算法介绍](https://taozj.org/201611/learn-note-of-distributed-system-(2)-paxos-algorithm.html),taozj.org.
 
 [5] [Paxos算法](https://zh.wikipedia.org/zh-cn/Paxos%E7%AE%97%E6%B3%95#.E5.AE.9E.E4.BE.8B),wikipedia.org.
+
+[6] [Paxos原理、历程及实战](http://chuansong.me/n/2189245),chuansong.me.
