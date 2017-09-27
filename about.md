@@ -7,7 +7,7 @@ Research and Development on Networking and Cloud Computing.
 
 **Career:**
 
-Cisco, Huawei, Baidu
+SJTU(master)  -->  Cisco(RD Intern)  -->  Huawei(RD Engineer)  -->  Baidu(Sr. RD Engineer)
 
 
 
