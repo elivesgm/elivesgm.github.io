@@ -3,7 +3,11 @@ layout: page
 title: About Me
 ---
 
-Networking Research and Development Engineer.
+Research and Development on Networking and Cloud Computing.
+
+Career:
+Cisco, Huawei, Baidu
+
 
 Publications:
 
