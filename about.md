@@ -7,7 +7,7 @@ Networking Research and Development Engineer.
 
 Publications:
 
-[1] Ge M, Ye T, Lee T T, et al., ["Multicast Routing and Wavelength Assignment in AWG-Based Clos Networks"](http://ieeexplore.ieee.org/abstract/document/7858793/), IEEE/ACM Transactions on Networking, 2017.
+[1] Mao Ge, Tong Ye, Tony T. Lee, and Weisheng Hu, ["Multicast Routing and Wavelength Assignment in AWG-Based Clos Networks"](http://ieeexplore.ieee.org/abstract/document/7858793/), IEEE/ACM Transactions on Networking, 2017.
 
 [2] Tong Ye, Tony T. Lee, M. Ge, and Weisheng Hu, ["Modular AWG-based Interconnection for Large-Scale Data Center Networks"](http://ieeexplore.ieee.org/document/7393761/), IEEE Trans. on Cloud Computing, accepted.
 
