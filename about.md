@@ -3,12 +3,15 @@ layout: page
 title: About Me
 ---
 
-Research and Development on Networking and Cloud Computing.
+**Interests:**
+
+Communication/networking in cloud computing and distributed systems.
+
+
 
 **Career:**
 
 SJTU(master)  -->  Cisco(RD Intern)  -->  Huawei(RD Engineer)  -->  Baidu(Sr. RD Engineer)
-
 
 
 
