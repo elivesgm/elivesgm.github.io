@@ -161,13 +161,17 @@ BOIS：
 
 
 ### 3. 内存管理
-#### 3.1 连续内存分配
+
+#### 3.1 Basics
+Cache line可以简单的理解为CPU Cache中的最小缓存单位。目前主流的CPU Cache的Cache Line大小都是64Bytes。假设我们有一个512字节的一级缓存，那么按照64B的缓存单位大小来算，这个一级缓存所能存放的缓存个数就是512/64 = 8个[4]。
+
+#### 3.2 连续内存分配
 
 - 内碎片：分配单元内部未使用的内存
 - 外碎片：分配单元之间未使用的内存
 
-#### 3.2 非连续内存分配
-##### 3.2.1 段式存储管理
+#### 3.3 非连续内存分配
+##### 3.3.1 段式存储管理
 程序可移植，移植程序的时候只需要更改段基址。
 
 把进程的地址空间分为若干个段：
@@ -179,7 +183,7 @@ BOIS：
 - 数据段，存放已初始化的全局变量和静态变量
 - BSS段，存放未初始化的全局变量和静态变量，使用前会被系统自动清0。
 
-##### 3.2.2 页式存储管理
+##### 3.3.2 页式存储管理
 - 便于内存管理和减少碎片
 - 虚拟内存管理
 
@@ -187,7 +191,7 @@ BOIS：
 
 
 
-##### 3.2.3 页表
+##### 3.3.3 页表
 
 a. 快表, Translation Look-aside Buffer, TLB
 
@@ -198,7 +202,7 @@ b. 多级页表
 
 简介引用的方式减小页表长度
 
-##### 3.2.4 段页式存储管理
+##### 3.3.4 段页式存储管理
 
 
 #### mmap
@@ -261,3 +265,5 @@ a **unidirectional** data channel that can be used for interprocess communicatio
 [2] [mmap分析](http://www.cnblogs.com/huxiao-tee/p/4660352.html), cnblogs.com.
 
 [3] [简单Linux C线程池](http://www.cnblogs.com/venow/archive/2012/11/22/2779667.html),cnblogs.com.
+
+[4] [All about cpu cache](http://cenalulu.github.io/linux/all-about-cpu-cache/),github.io.
