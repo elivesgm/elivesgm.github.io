@@ -12,10 +12,10 @@ tag: Test
 
 1. 下载安装
 
-  tar -xvf googletest-release-1.8.0.tar
-  cd test/gtest/googletest-release-1.8.0/googletest/
-  cmake CMakeLists.txt
-  make
+    tar -xvf googletest-release-1.8.0.tar
+    cd test/gtest/googletest-release-1.8.0/googletest/
+    cmake CMakeLists.txt
+    make
 
 2. 准备头文件和lib库文件
 
