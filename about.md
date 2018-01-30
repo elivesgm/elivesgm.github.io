@@ -5,7 +5,7 @@ title: About Me
 
 **Interests:**
 
-Communication/networking in cloud computing and distributed systems.
+Load balance/networking in cloud computing and distributed systems.
 
 
 
