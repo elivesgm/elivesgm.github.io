@@ -1,0 +1,16 @@
+---
+layout: post
+title: "Load Balance"
+date: 2018-01-31 00:27:06 
+description: "Learning Notes"
+tag: Proggramming
+---
+
+
+### 1. glog
+
+### 2. comlog
+
+### 3. 日志裁剪
+
+- logrotate
