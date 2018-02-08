@@ -24,20 +24,20 @@ tag: Test
 
 3. 待测试源码
 
-  [^_^ 11:52 ~/test/gtest/testcase] vim sample.h
-  // sample.h
-  int fun(int a, int b);
+    [^_^ 11:52 ~/test/gtest/testcase] vim sample.h
+    // sample.h
+    int fun(int a, int b);
 
-  [^_^ 11:52 ~/test/gtest/testcase] vim sample.cpp
-  include "sample.h"
-  int fun(int a, int b)
-  {
+    [^_^ 11:52 ~/test/gtest/testcase] vim sample.cpp
+    include "sample.h"
+    int fun(int a, int b)
+    {
       return (a - b);
-  }
+    }
 
 4. 编译源码
 
-  [^_^ 11:52 ~/test/gtest/testcase] g++ -c sample.cpp
+    [^_^ 11:52 ~/test/gtest/testcase] g++ -c sample.cpp
 
 5. 测试用例代码
 
