@@ -1,0 +1,31 @@
+---
+layout: post
+title: "Nginx Atomic Process"
+date: 2018-07-18 00:27:06 
+description: "Learning Notes"
+tag: Nginx
+---
+
+
+### 1 ngx_atomic_fetch_add
+将value指向的值增加add，返回增加以前的值
+    
+    #define ngx_atomic_fetch_add(value, add)          __sync_fetch_and_add(value, add)
+
+
+
+### 2 ngx_atomic_cmp_set
+如果lock指向的值等于old，那么把lock指向的内存单元设为set，并返回1，其他情况则返回0
+
+    #define ngx_atomic_cmp_set(lock, old, set)        __sync_bool_compare_and_swap(lock, old, set)
+
+### 3 ngx_memory_barrier
+在代码中放上这个函数，那么编译器就不会为了优化而打乱这个函数前后的指令，这也是为什么它取名叫barrier，相当于一个屏障，阻止编译器把后面的指令搬到barrier前面去
+
+    #define ngx_memory_barrier()                      __sync_synchronize()
+
+### 4 ngx_cpu_pause
+一条汇编指令，暂停程序运行
+
+    #define ngx_cpu_pause()                           __asm__("pause")
+
