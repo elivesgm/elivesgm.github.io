@@ -1,0 +1,21 @@
+---
+layout: post
+title: "KMP Algorithm"
+date: 2018-07-18 00:27:06 
+description: "Learning Notes"
+tag: Algorithm
+---
+
+### 算法概述
+主要用于在一个字符串A中查找字符串B.
+
+### 算法主要思想
+在不匹配时尽量减少重复匹配检查过的字符，因此需要对字符串B做预处理生成一张Partial Match Table，然后在不匹配时根据这张表中的值进行回退。
+
+### 算法退化
+如果字符串B中没有重复的字串，也就是Partial Match Table每个元素都是0, 那么这个算法就退化为逐一匹配。
+
+
+### References
+
+[1] [字符串匹配的KMP算法](http://www.ruanyifeng.com/blog/2013/05/Knuth%E2%80%93Morris%E2%80%93Pratt_algorithm.html)
