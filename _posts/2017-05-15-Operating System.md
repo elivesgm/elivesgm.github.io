@@ -176,10 +176,9 @@ Cache line可以简单的理解为CPU Cache中的最小缓存单位。目前主�
 
 把进程的地址空间分为若干个段：
 
-- 栈
-- 堆
-- 代码段
-- 堆栈段
+- 栈，堆栈段，存放临时变量，函数参数，函数返回值
+- 堆，malloc的内存
+- 代码段，代码
 - 数据段，存放已初始化的全局变量和静态变量
 - BSS段，存放未初始化的全局变量和静态变量，使用前会被系统自动清0。
 
@@ -215,7 +214,8 @@ refers to [2].
 
 ### 4.1 进程与线程简介
 
-
+- http://www.ruanyifeng.com/blog/2013/04/processes_and_threads.html
+- http://www.qnx.com/developers/docs/6.4.1/neutrino/getting_started/s1_procs.html
 
 ### 4.2 线程池
 refers to [3].
