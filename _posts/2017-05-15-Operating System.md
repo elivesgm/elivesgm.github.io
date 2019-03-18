@@ -243,6 +243,10 @@ refers to [2].
 - 线程没有严格的父子层次关系，意味一个线程可以杀死任何对等线程。
 - 每个对等线程都能读写相同的共享数据。
 
+refers to 
+
+- http://buptjz.github.io/2014/04/23/processAndThreads
+- http://www.embeddedlinux.org.cn/html/xianchengjincheng/201201/26-1957.html
 
 ### 4.2 线程池
 refers to [3].
