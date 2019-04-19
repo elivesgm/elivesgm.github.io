@@ -125,7 +125,9 @@ JSON 对象在花括号中书写,对象可以包含多个名称/值对：
 - 缺点
 	- 没有XML格式这么推广的深入人心和喜用广泛，描述性比XML较差，没有XML那么通用性；
 
-Example:
+JSON解析/生成库，refers to [5]
+
+#### 5.3 Example:
 
 XML:
 
@@ -169,3 +171,5 @@ JSON格式：
 [3] [google protobuf安装与使用](http://www.cnblogs.com/luoxn28/p/5303517.html), cnblogs.com.
 
 [4] [protobuf-c](http://www.cnblogs.com/Anker/p/3416541.html),cnblogs.com.
+
+[5] [nativejson-benchmark](https://github.com/miloyip/nativejson-benchmark), github.com
